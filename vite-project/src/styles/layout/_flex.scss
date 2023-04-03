@@ -1,0 +1,17 @@
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+
+    &_top {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_bottom {
+        justify-content: space-between;
+        gap: 3rem;
+        border-top: .1rem solid $color-secondary;
+    }
+}

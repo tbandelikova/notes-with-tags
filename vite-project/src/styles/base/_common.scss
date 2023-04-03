@@ -1,0 +1,36 @@
+@use 'typography';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    color: typography.$color-text;
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-style: italic;
+    resize: none;
+    padding: 0 .5rem;
+}
+
+.title {
+    align-self: flex-start;
+}

@@ -1,0 +1,63 @@
+.btn {
+    transition: all .3s linear;
+    color: $color-bg;
+    padding: 1rem;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:active {
+        transform: translateY(.5rem);
+    }
+
+    &_search {
+        border-radius: 50%;
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: lighten($color-primary, 10%);
+        }
+    }
+
+    &_add {
+        border-radius: 1rem;
+        background-color: $color-secondary;
+
+        &:hover {
+            background-color: lighten($color-secondary, 10%);
+        }
+    }
+
+    &_add-note {
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: lighten($color-primary, 10%);
+        }
+    }
+
+    &_clear-note {
+        color: $color-secondary;
+        border: .2rem solid $color-secondary;
+
+        &:hover {
+            background-color: lighten($color-bg, 10%);
+        }
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+
+    &_search {
+        background: center/contain no-repeat url('../src/assets/icons/icons8-search.svg');
+    }
+
+    &_add {
+        background: center/contain no-repeat url('../src/assets/icons/icons8-add-new-50.png');
+    }
+}
