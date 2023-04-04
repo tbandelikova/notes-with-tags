@@ -46,6 +46,23 @@
             background-color: lighten($color-bg, 10%);
         }
     }
+
+    &_delete {
+        background-color: $color-secondary;
+
+        &:hover {
+            background-color: lighten($color-secondary, 10%);
+        }
+    }
+
+    &_edit {
+        border-radius: 1rem;
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: lighten($color-primary, 10%);
+        }
+    }
 }
 
 .icon {
@@ -60,4 +77,13 @@
     &_add {
         background: center/contain no-repeat url('../src/assets/icons/icons8-add-new-50.png');
     }
+
+    &_delete {
+        background: center/contain no-repeat url('../src/assets/icons/icons8-trash.svg');
+    }
+
+    &_edit {
+        background: center/contain no-repeat url('../src/assets/icons/icons8-pencil-drawing-24.png');
+    }
 }
+

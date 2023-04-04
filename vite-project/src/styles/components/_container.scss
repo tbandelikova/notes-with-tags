@@ -1,9 +1,12 @@
-.App {
-    background-color: $color-bg;
-}
 .container {
-    height: 100vh;
-    max-width: 128rem;
+    max-width: $content-width;
     margin: auto;
-    padding: 0 4rem;
+    padding: 0 1rem;
+
+    @include media-tablet {
+        padding: 0 2.5rem;
+    }
+    @include media-laptop {
+        padding: 0 4rem;
+    }
 }

@@ -1,7 +1,11 @@
+@import './styles/abstract/mixins';
+@import './styles/abstract/variables';
+
 @import './styles/base/common';
 @import './styles/base/typography';
 
 @import './styles/components/buttons';
+@import './styles/components/card';
 @import './styles/components/container';
 @import './styles/components/modal';
 @import './styles/components/searchbar';

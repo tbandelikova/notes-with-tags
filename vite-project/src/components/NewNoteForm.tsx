@@ -1,17 +1,8 @@
-import { Dispatch, SetStateAction } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-
-type AddNoteProps = {
-    active: boolean;
-    setActive: Dispatch<SetStateAction<boolean>>;
-};
-
-type FormInput = {
-    note: string;
-};
+import { AddNoteProps, FormInput } from '../types/types';
 
 export const NewNoteForm = function NewNoteForm(props: AddNoteProps) {
-    const { active, setActive } = props;
+    const { active, setActive, setData } = props;
     const {
         register,
         formState: { errors },
@@ -22,8 +13,24 @@ export const NewNoteForm = function NewNoteForm(props: AddNoteProps) {
     });
 
     const onSubmit: SubmitHandler<FormInput> = (data) => {
-        console.log(JSON.stringify(data));
+        const input: FormInput = { note: '', tags: [] };
+        Object.assign(input, data);
+        input.note.split('').map((el, i, arr) => {
+            const re = /[^A-ZА-Я0-9]/gi;
+            const x = input.note.match(re);
+            if (el == '#' && x?.length) {
+                let tag = '#',
+                    j = i + 1;
+                while (!x?.includes(arr[j]) && j < input.note.length) {
+                    tag += arr[j];
+                    j++;
+                }
+                tag.length > 1 && input.tags.push(tag);
+            }
+        });
+        setData((arr) => [...arr, input]);
         reset();
+        setActive(false);
     };
 
     return (
