@@ -7,7 +7,7 @@ type AddNoteProps = {
 };
 
 type FormInput = {
-    value: string;
+    note: string;
 };
 
 export const NewNoteForm = function NewNoteForm(props: AddNoteProps) {
@@ -36,10 +36,16 @@ export const NewNoteForm = function NewNoteForm(props: AddNoteProps) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <form className="modal-form" onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                        type="button"
+                        value="Clear"
+                        className="btn btn_clear-note"
+                        onClick={() => reset()}
+                    />
                     <textarea
                         cols={50}
                         rows={10}
-                        {...register('value', {
+                        {...register('note', {
                             required: 'nothing to add',
                             maxLength: {
                                 value: 1000,
@@ -48,14 +54,8 @@ export const NewNoteForm = function NewNoteForm(props: AddNoteProps) {
                         })}
                     ></textarea>
                     <div className="error">
-                        {errors?.value && <p>{errors?.value.message}</p>}
+                        {errors?.note && <p>{errors?.note.message}</p>}
                     </div>
-                    <input
-                        type="button"
-                        value="Clear"
-                        className="btn btn_clear-note"
-                        onClick={() => reset()}
-                    />
                     <input
                         type="submit"
                         value="Add"
